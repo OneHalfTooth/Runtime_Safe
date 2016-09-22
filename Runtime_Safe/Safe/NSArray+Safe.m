@@ -10,8 +10,7 @@
 #import <objc/runtime.h>
 
 @implementation NSArray (Safe)
-//#ifdef DEBUG
-//#else
+
 + (void)load {
     Method originalMethod = class_getClassMethod(self, @selector(arrayWithObjects:count:));
     Method swizzledMethod = class_getClassMethod(self, @selector(customArrayWithObjects:count:));
